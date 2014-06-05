@@ -1,0 +1,14 @@
+<?php
+
+if (isset ($_GET['post_id'])) {
+	//$user_id = $_GET['id'];
+	$post_id = $_GET['post_id'];
+	
+	echo "<ul>";
+	$result = mysql_query("SELECT * FROM posts WHERE post_id = '$post_id'");
+	while ($row = mysql_fetch_assoc($result)) {
+		echo '<p>'.$row['body'].'<p>';	
+	}
+	echo "</ul>";
+}	
+?>
