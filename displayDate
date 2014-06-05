@@ -1,0 +1,13 @@
+<?php
+
+if (isset($_GET['id'])) {
+	$user_id = $_GET['id'];
+	
+	echo "<ul>";
+	$result = mysql_query('SELECT * FROM posts WHERE user_id = '.$user_id );
+	while ($row = mysql_fetch_assoc($result)) {
+		echo '<li>'.$row['date'].'</li>';	
+	}
+	echo "</ul>";
+}
+?>
