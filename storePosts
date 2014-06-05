@@ -1,0 +1,19 @@
+<?php
+    include "server.php";
+	
+    $user_id =$_POST['user_id'];
+	$title = $_POST['title'];
+    $post =$_POST['posts'];
+	
+	$name = mysql_real_escape_string($_POST['user_id']);
+	$title = mysql_real_escape_string($_POST['title']);
+	$post = mysql_real_escape_string($_POST['posts']);
+	$date = mysql_real_escape_string($_POST['date']); 
+	
+	$sql="INSERT INTO posts (body,user_id,date,title) VALUES ('$post','$user_id',NOW(),'$title')";
+	
+	 mysql_query($sql);
+	 
+	header("Location: index.php");
+	die();
+?>
