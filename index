@@ -67,6 +67,7 @@ if(!isset($_SESSION['sess_user_id'])) {
     </table>  
 		<h2>Create new Post
 			<form action="storePosts.php" method="post" class="container">
+				<input type ="hidden" name = "user_id" value = "<?php echo $_SESSION['sess_user_id']; ?>"> </input>
 				<p align = left>Title:<br />	
 					<input  name="title" type ="text" id="title" >
 					<br />
